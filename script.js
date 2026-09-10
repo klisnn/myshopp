@@ -97,3 +97,56 @@ if (themeToggle) {
     });
 
 }
+const modal = document.getElementById("productModal");
+const closeModal = document.getElementById("closeModal");
+
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalPrice = document.getElementById("modalPrice");
+
+const viewButtons = document.querySelectorAll(".view-product");
+
+viewButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const product = button.closest(".product-card");
+
+        const title = product.querySelector("h3").textContent;
+        const description = product.querySelector("p").textContent;
+        const price = product.querySelector("strong").textContent;
+
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        modalPrice.textContent = "Price: " + price;
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+
+    });
+
+});
+
+if (closeModal) {
+
+    closeModal.addEventListener("click", function() {
+
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+
+    });
+
+}
+
+if (modal) {
+
+    modal.addEventListener("click", function(event) {
+
+        if (event.target === modal) {
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+        }
+
+    });
+
+}
