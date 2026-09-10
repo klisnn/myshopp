@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catalog - My Shop</title>
+    <meta name="description" content="Browse and search products in the My Shop catalog.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Product Catalog</h1>
+        <p>Find the products you need</p>
+    </header>
+
+    <main>
+
+        <!-- Search -->
+        <section>
+            <h2>Find a Product</h2>
+
+            <label for="searchInput">Search products:</label>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter product name..."
+            >
+        </section>
+
+        <!-- Filter -->
+        <section>
+            <h2>Filter by Category</h2>
+
+            <label for="categoryFilter">Choose category:</label>
+
+            <select id="categoryFilter">
+                <option value="all">All Products</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </section>
+
+        <!-- Products -->
+        <section>
+
+            <h2>Products</h2>
+
+            <div id="productsContainer">
+
+                <article class="product-card" data-category="electronics">
+                    <h3>Laptop</h3>
+                    <p>Powerful laptop for work and study.</p>
+                    <p>Price: $800</p>
+                    <button>View Product</button>
+                </article>
+
+                <article class="product-card" data-category="electronics">
+                    <h3>Smartphone</h3>
+                    <p>Modern smartphone with a great camera.</p>
+                    <p>Price: $500</p>
+                    <button>View Product</button>
+                </article>
+
+                <article class="product-card" data-category="clothing">
+                    <h3>T-Shirt</h3>
+                    <p>Comfortable cotton T-shirt.</p>
+                    <p>Price: $25</p>
+                    <button>View Product</button>
+                </article>
+
+                <article class="product-card" data-category="clothing">
+                    <h3>Jacket</h3>
+                    <p>Warm and stylish jacket.</p>
+                    <p>Price: $90</p>
+                    <button>View Product</button>
+                </article>
+
+                <article class="product-card" data-category="accessories">
+                    <h3>Watch</h3>
+                    <p>Elegant watch for everyday use.</p>
+                    <p>Price: $120</p>
+                    <button>View Product</button>
+                </article>
+
+                <article class="product-card" data-category="accessories">
+                    <h3>Backpack</h3>
+                    <p>Practical backpack for school and travel.</p>
+                    <p>Price: $60</p>
+                    <button>View Product</button>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
