@@ -30,3 +30,41 @@ function filterProducts() {
 searchInput.addEventListener("input", filterProducts);
 
 categoryFilter.addEventListener("change", filterProducts);
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const formMessage = document.getElementById("formMessage");
+
+        if (name === "") {
+            formMessage.textContent = "Please enter your name.";
+            formMessage.style.color = "red";
+            return;
+        }
+
+        if (email === "" || !email.includes("@")) {
+            formMessage.textContent = "Please enter a valid email.";
+            formMessage.style.color = "red";
+            return;
+        }
+
+        if (message.length < 10) {
+            formMessage.textContent = "Message must contain at least 10 characters.";
+            formMessage.style.color = "red";
+            return;
+        }
+
+        formMessage.textContent = "Message sent successfully!";
+        formMessage.style.color = "green";
+
+        contactForm.reset();
+    });
+
+}
