@@ -89,3 +89,30 @@ nav a:hover {
         align-items: center;
     }
 }
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode main {
+    background-color: #121212;
+}
+
+body.dark-mode .product-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+#themeToggle {
+    background-color: #ffffff;
+    color: #111111;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+body.dark-mode #themeToggle {
+    background-color: #333333;
+    color: #ffffff;
+}
