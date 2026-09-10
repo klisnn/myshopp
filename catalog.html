@@ -6,48 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catalog - My Shop</title>
-    <meta name="description" content="Browse and search products in the My Shop catalog.">
+    <meta name="description" content="Browse products at My Shop.">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="catalog.html">Catalog</a>
-    <a href="contact.html">Contact</a>
-</nav>
-<button id="themeToggle" type="button">
-     Dark Mode
-</button>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact</a>
+
+        <button id="themeToggle" type="button">
+             Dark Mode
+        </button>
+    </nav>
 
     <header>
         <h1>Product Catalog</h1>
-        <p>Find the products you need</p>
+        <p>Find the product you need</p>
     </header>
 
     <main>
 
-        <!-- Search -->
-        <section>
-            <h2>Find a Product</h2>
+        <section class="catalog-controls">
 
-            <label for="searchInput">Search products:</label>
+            <label for="searchInput">Search:</label>
 
             <input
                 type="text"
                 id="searchInput"
-                placeholder="Enter product name..."
+                placeholder="Search products..."
             >
-        </section>
 
-        <!-- Filter -->
-        <section>
-            <h2>Filter by Category</h2>
-
-            <label for="categoryFilter">Choose category:</label>
+            <label for="categoryFilter">Category:</label>
 
             <select id="categoryFilter">
                 <option value="all">All Products</option>
@@ -55,55 +50,61 @@
                 <option value="clothing">Clothing</option>
                 <option value="accessories">Accessories</option>
             </select>
+
         </section>
 
-        <!-- Products -->
         <section>
 
-            <h2>Products</h2>
+            <h2>Our Products</h2>
 
-            <div id="productsContainer">
+            <div id="productsContainer" class="products-grid">
 
                 <article class="product-card" data-category="electronics">
+                    <div class="product-icon"></div>
                     <h3>Laptop</h3>
                     <p>Powerful laptop for work and study.</p>
-                    <p>Price: $800</p>
-                    <button>View Product</button>
+                    <strong>$800</strong>
+                    <button class="view-product">View Product</button>
                 </article>
 
                 <article class="product-card" data-category="electronics">
+                    <div class="product-icon"></div>
                     <h3>Smartphone</h3>
                     <p>Modern smartphone with a great camera.</p>
-                    <p>Price: $500</p>
-                    <button>View Product</button>
+                    <strong>$500</strong>
+                    <button class="view-product">View Product</button>
                 </article>
 
                 <article class="product-card" data-category="clothing">
+                    <div class="product-icon"></div>
                     <h3>T-Shirt</h3>
                     <p>Comfortable cotton T-shirt.</p>
-                    <p>Price: $25</p>
-                    <button>View Product</button>
+                    <strong>$25</strong>
+                    <button class="view-product">View Product</button>
                 </article>
 
                 <article class="product-card" data-category="clothing">
+                    <div class="product-icon"></div>
                     <h3>Jacket</h3>
                     <p>Warm and stylish jacket.</p>
-                    <p>Price: $90</p>
-                    <button>View Product</button>
+                    <strong>$90</strong>
+                    <button class="view-product">View Product</button>
                 </article>
 
                 <article class="product-card" data-category="accessories">
+                    <div class="product-icon"></div>
                     <h3>Watch</h3>
                     <p>Elegant watch for everyday use.</p>
-                    <p>Price: $120</p>
-                    <button>View Product</button>
+                    <strong>$120</strong>
+                    <button class="view-product">View Product</button>
                 </article>
 
                 <article class="product-card" data-category="accessories">
+                    <div class="product-icon"></div>
                     <h3>Backpack</h3>
                     <p>Practical backpack for school and travel.</p>
-                    <p>Price: $60</p>
-                    <button>View Product</button>
+                    <strong>$60</strong>
+                    <button class="view-product">View Product</button>
                 </article>
 
             </div>
@@ -111,6 +112,25 @@
         </section>
 
     </main>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal" aria-hidden="true">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-modal" type="button">
+                &times;
+            </button>
+
+            <h2 id="modalTitle">Product</h2>
+
+            <p id="modalDescription"></p>
+
+            <p id="modalPrice"></p>
+
+        </div>
+
+    </div>
 
     <script src="script.js"></script>
 
